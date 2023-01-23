@@ -1,0 +1,36 @@
+{%extends 'header.html'%}
+{% block content %}
+  <body>
+    <main class="page">
+     <section class="contact-container">
+          <article class="contact-info">
+            <h3>Want To Get In Touch?</h3>
+            <p>
+             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur blanditiis consectetur distinctio dolorem ea nisi numquam sunt tenetur veritatis vero. Culpa ducimus hic non quaerat quam quasi sed vel vitae.
+            </p>
+          </article>
+          <article>
+            <form class="form contact-form">
+              <div class="form-row">
+                <label html="name" class="form-label">your name</label>
+                <input type="text" name="name" id="name" class="form-input" />
+              </div>
+              <div class="form-row">
+                <label html="email" class="form-label">your email</label>
+                <input type="text" name="email" id="email" class="form-input" />
+              </div>
+              <div class="form-row">
+                <label html="message" class="form-label">message</label>
+                <textarea name="message" id="message" class="form-textarea"></textarea>
+              </div>
+              <button type="submit" class="btn btn-block">
+                submit
+              </button>
+            </form>
+          </article>
+        </section>
+    </main>
+
+    <script src="./js/app.js"></script>
+  </body>
+{% endblock %}

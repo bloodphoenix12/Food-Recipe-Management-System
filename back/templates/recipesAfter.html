@@ -1,0 +1,40 @@
+{%extends 'header.html'%}
+{% block content %}
+  <body>
+    <!-- nav  -->
+    <!-- end of nav -->
+    <!-- main -->
+    <main class="page">
+      <section class="recipes-container">
+        <!-- tag container -->
+        <div class="tags-container">
+          <h4>recipes</h4>
+          {% for c in cat %}
+          <div class="tags-list">
+            <a href="template">{{ c.name }}</a>
+
+          </div>
+          {% endfor %}
+        </div>
+       <div class="recipes-list">
+          {% for p in index %}
+          <a href="/recipe/{{p.id}}" class="recipe">
+            <img
+              src="{{ p.image.url }}"
+              class="img recipe-img"
+              alt=""
+            />
+            <h5>{{ p.name }}</h5>
+            <p>TIme: {{ p.time }} min</p>
+          </a>
+
+          {% endfor %}
+
+        </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./js/app.js"></script>
+  </body>
+{% endblock %}

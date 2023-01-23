@@ -1,0 +1,59 @@
+{%extends 'header.html'%}
+{% block content %}
+{%load static%}
+  <body>
+    <main class="page">
+      <header class="hero">
+        <div class="hero-container">
+          <div class="hero-text">
+            <h1>Local recipes</h1>
+            <h4>no fluff, just recipes</h4>
+          </div>
+        </div>
+      </header>
+        <div class="container ">
+            <div class="row">
+                <div class="col-md-3 my-3">
+                    <ul class="card ">
+                        <span class="mx-3" style="font-size:25px">Catgory</span>
+                        {% for c in category %}
+                        <li class="mx-3 my-1" style="border-bottom: 1px solid gainsboro"><a href="/get_by_category/{{c.id}}">{{c.name}}</a></li>
+                        {%endfor%}
+                    </ul>
+
+                </div>
+           {% for p in product %}
+          {% if request.session.user %}
+         <div class="col-md-3 my-3">
+             <a href="/recipe/{{p.id}}" class="recipe">
+            <div class="card">
+                 <img src="{{ p.image}}" class="img recipe-img m-0" alt="" style="height:250px;"/>
+                  <div class="card-body p-0 m-0">
+                    <h5 class="card-title mx-2 py-3">{{ p.name }}</h5>
+                  </div>
+                </div>
+             </a>
+         </div>
+          {%else%}
+           <div class="col-md-3 my-3">
+             <a href="/login" class="recipe">
+            <div class="card" >
+                 <img src="{{ p.image}}" class="img recipe-img m-0" alt="" style="height:250px;"/>
+                  <div class="card-body p-0 m-0">
+                    <h5 class="card-title mx-2 py-3">{{ p.name }}</h5>
+                  </div>
+                </div>
+             </a>
+         </div>
+          {%endif%}
+          {%endfor%}
+      </div>
+  </div>
+    </main>
+
+
+
+    <script src="./js/app.js"></script>
+  </body>
+
+{% endblock %}

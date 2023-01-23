@@ -1,0 +1,31 @@
+{%extends 'header.html'%}
+{% block content %}
+  <body>
+    <!-- nav  -->
+    <!-- end of nav -->
+    <main class="page">
+      <div class="featured-recipes">
+        <h4>{{cat.name}}</h4>
+
+        <div class="recipes-list">
+
+          <a href="/recipe/{{p.id}}" class="recipe">
+            <img
+              src="{{ prod.image.url }}"
+              class="img recipe-img"
+              alt=""
+            />
+            <h5>{{prod.name}}</h5>
+            <p>Prep : {{prod.time}}min </p>
+          </a>
+
+        </div>
+      </div>
+          
+    </main>
+
+    <script src="./js/app.js"></script>
+  </body>
+{% endblock %}
+
+#./assets/recipes/recipe-1.jpeg      (img ko src)
